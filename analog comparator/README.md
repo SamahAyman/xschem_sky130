@@ -14,10 +14,10 @@
 
 
 ### Test (1) ###
-Input A voltage: V1 A GND PULSE(0 1.8 0 100n 0 0 1u)
-Input B voltage: 0.7
-CLK: PULSE(0 1.8 5n .1n .1n 10n 20n)
-The output is 1 when the input ramp is below 0.825 and 0 after that point
+* Input A voltage: V1 A GND PULSE(0 1.8 0 100n 0 0 1u)
+* Input B voltage: 0.7
+* CLK: PULSE(0 1.8 5n .1n .1n 10n 20n)
+* The output is 1 when the input ramp is below 0.825 and 0 after that point
 ![alt text](https://github.com/SamahAyman/xschem_sky130/blob/main/analog%20comparator/simulations/comp_waveform.PNG)
 
 
@@ -25,10 +25,10 @@ adding offset 0.2 to the output (Y)
 ![alt text](https://github.com/SamahAyman/xschem_sky130/blob/main/analog%20comparator/simulations/out%2B0.2%20waveform.PNG)
 
 ### Test (2) ###
-Input A voltage: V1 A GND PULSE(0 1.8 0 100n 0 0 1u)
-Input B voltage: 0.9
-CLK: PULSE(0 1.8 5n .1n .1n 10n 20n)
-The output is 1 when the input ramp is below 1.17 and 0 after that point
+* Input A voltage: V1 A GND PULSE(0 1.8 0 100n 0 0 1u)
+* Input B voltage: 0.9
+* CLK: PULSE(0 1.8 5n .1n .1n 10n 20n)
+* The output is 1 when the input ramp is below 1.17 and 0 after that point
 ![alt text](https://github.com/SamahAyman/xschem_sky130/blob/main/analog%20comparator/simulations/in2%200.9.PNG)
 
 
