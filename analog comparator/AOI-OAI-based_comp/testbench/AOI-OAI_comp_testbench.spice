@@ -1,0 +1,111 @@
+**.subckt AOI-OAI_comp_testbench
+V1 B1 GND 0.1
+V2 B2 GND 0.3
+V3 B3 GND 0.5
+V4 B4 GND 0.7
+V5 B5 GND 0.8
+V6 B6 GND 0.9
+V7 B7 GND 1
+V8 B8 GND 1.2
+V9 B9 GND 1.4
+V10 B10 GND 1.6
+V11 A GND PULSE(0 1.8 0 10u 0 0 10u)
+X1 A B1 Y1 CLK AOI-OAI_comp
+X2 A B2 Y2 CLK AOI-OAI_comp
+X3 A B3 Y3 CLK AOI-OAI_comp
+X4 A B4 Y4 CLK AOI-OAI_comp
+X5 A B5 Y5 CLK AOI-OAI_comp
+X6 A B6 Y6 CLK AOI-OAI_comp
+X7 A B7 Y7 CLK AOI-OAI_comp
+X8 A B8 Y8 CLK AOI-OAI_comp
+X9 A B9 Y9 CLK AOI-OAI_comp
+X10 A B10 Y10 CLK AOI-OAI_comp
+V12 CLK GND PULSE(0 1.8 5n .1n .1n 40n 80n)
+**** begin user architecture code
+
+
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__tt.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__tt.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__tt.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt__tt.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt__tt.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/esd_nfet_01v8/sky130_fd_pr__esd_nfet_01v8__tt.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__tt.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__tt.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/esd_pfet_g5v0d10v5/sky130_fd_pr__esd_pfet_g5v0d10v5__tt.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__tt.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d16v0/sky130_fd_pr__pfet_g5v0d16v0__tt.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__tt.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d16v0/sky130_fd_pr__nfet_g5v0d16v0__tt_discrete.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/esd_nfet_g5v0d10v5/sky130_fd_pr__esd_nfet_g5v0d10v5__tt.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/corners/tt/nonfet.spice
+* Mismatch parameters
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8/sky130_fd_pr__nfet_01v8__mismatch.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8/sky130_fd_pr__pfet_01v8__mismatch.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_01v8_lvt/sky130_fd_pr__nfet_01v8_lvt__mismatch.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8_lvt/sky130_fd_pr__pfet_01v8_lvt__mismatch.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_01v8_hvt/sky130_fd_pr__pfet_01v8_hvt__mismatch.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_g5v0d10v5/sky130_fd_pr__nfet_g5v0d10v5__mismatch.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/pfet_g5v0d10v5/sky130_fd_pr__pfet_g5v0d10v5__mismatch.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_05v0_nvt/sky130_fd_pr__nfet_05v0_nvt__mismatch.corner.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/cells/nfet_03v3_nvt/sky130_fd_pr__nfet_03v3_nvt__mismatch.corner.spice
+* Resistor~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/Capacitor
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/r+c/res_typical__cap_typical.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/r+c/res_typical__cap_typical__lin.spice
+* Special cells
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/corners/tt/specialized_cells.spice
+* All models
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/all.spice
+* Corner
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_pr_ngspice/latest/models/corners/tt/rf.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/nand2/sky130_fd_sc_hd__nand2_1.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/dfrtp/sky130_fd_sc_hd__dfrtp_1.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/nor3/sky130_fd_sc_hd__nor3_1.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/or2/sky130_fd_sc_hd__or2_1.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/dlrbn/sky130_fd_sc_hd__dlrbn_1.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/a31o/sky130_fd_sc_hd__a31o_2.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/a222oi/sky130_fd_sc_hd__a222oi_1.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/o221ai/sky130_fd_sc_hd__o221ai_1.spice
+.include ~/projects/foundry/skywater-pdk/libraries/sky130_fd_sc_hd/latest/cells/inv/sky130_fd_sc_hd__inv_1.spice
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /home/ml2/projects/sky130_simulations/AOI-OAI_comp.sym # of pins=4
+* sym_path: /home/ml2/projects/sky130_simulations/AOI-OAI_comp.sym
+* sch_path: /home/ml2/projects/sky130_simulations/AOI-OAI_comp.sch
+.subckt AOI-OAI_comp  XXX XXX XXX CLK
+x1 A A CLK_B VDD net2 VDD VGND VNB VPB VPWR net2 sky130_fd_sc_hd__a222oi_1
+x2 B B CLK_B VDD net1 VDD VGND VNB VPB VPWR net1 sky130_fd_sc_hd__a222oi_1
+V1 VSS GND 0
+V2 VDD GND 1.8
+V3 VGND GND 0
+V4 VPWR GND 1.8
+V5 VNP GND 0
+V6 VPB GND 1.8
+x11 A A CLK VSS net9 VGND VNB VPB VPWR net3 sky130_fd_sc_hd__o221ai_1
+x3 net3 VSS VGND VNB VPB VPWR net9 sky130_fd_sc_hd__or2_1
+x4 B B CLK VSS net10 VGND VNB VPB VPWR net4 sky130_fd_sc_hd__o221ai_1
+x5 net4 VSS VGND VNB VPB VPWR net10 sky130_fd_sc_hd__or2_1
+x6 net4 VGND VNB VPB VPWR net6 sky130_fd_sc_hd__inv_1
+x7 net3 VGND VNB VPB VPWR net5 sky130_fd_sc_hd__inv_1
+x8 net2 net6 net8 VGND VNB VPB VPWR net7 sky130_fd_sc_hd__nor3_1
+x9 net7 net5 net1 VGND VNB VPB VPWR net8 sky130_fd_sc_hd__nor3_1
+x10 CLK VGND VNB VPB VPWR CLK_B sky130_fd_sc_hd__inv_1
+.ends
+
+.GLOBAL GND
+**** begin user architecture code
+
+.temp 25
+vvcc vcc 0 dc 1.8
+vvss vss 0 0
+.control
+tran 100n 10u
+plot A CLK Y1+2 Y2+4 Y3+6 Y4+8 Y5+10 Y6+12 Y7+14 Y8+16 Y9+18 Y10+20
+.endc
+
+
+**** end user architecture code
+** flattened .save nodes
+.end
